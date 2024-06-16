@@ -47,7 +47,7 @@ object practical01
         println("Question 4:")
         printf("Total wholesale cost for 60 copies : Rs. %f\n",wholesaleCost(60))
 
-        println("Question 4:")
+        println("Question 5:")
         printf("Time for running 2km,3km,2km at an easypace,a tempo pace and an easy pace respectively  :  %f minutes\n",timeForEasyPace(2) + timeForTempo(3) + timeForEasyPace(2) )
 
 
