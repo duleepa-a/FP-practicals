@@ -36,6 +36,14 @@ object practical04{
         case _ => println("Even Number is given")
     }
 
+    def toUpper(s: String) : String = {
+        s.toUpperCase()
+    }
+
+    def toLower(s: String) : String = {
+        s.toLowerCase()
+    }
+    
     def main(args: Array[String]): Unit = {
         
         //Question 1 .1)
@@ -53,8 +61,13 @@ object practical04{
         displayInventory()
 
         //Question 2
-        printf("Question 02 :\n Enter an integer:")        
+        printf("\n\nQuestion 02 :\n Enter an integer:")        
         val num = readInt()
         checkNum(num)
+
+        //Question 3
+        printf("\n\nQuestion 03 :\n")
+        println(toLower("HeEllo"))
+        println(toUpper("HeEllo"))
     }
 }
