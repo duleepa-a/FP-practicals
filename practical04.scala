@@ -37,11 +37,25 @@ object practical04{
     }
 
     def toUpper(s: String) : String = {
-        s.toUpperCase()
+         s.map { c =>
+            if (c >= 'a' && c <= 'z'){ 
+                (c - 32).toChar 
+            }
+            else{
+                 c
+            }     
+        }
     }
 
     def toLower(s: String) : String = {
-        s.toLowerCase()
+        s.map { c =>
+            if (c >= 'A' && c <= 'Z'){ 
+                (c + 32).toChar 
+            }
+            else{
+                 c
+            }     
+        }
     }
     
     def main(args: Array[String]): Unit = {
