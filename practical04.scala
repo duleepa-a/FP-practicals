@@ -70,7 +70,7 @@ object practical04{
             formattedNames(modifiedName)(identity)
         case s if s == "Saman" => formattedNames(name)(toLower)
         case s if s == "Kumara" => 
-            val modifiedName = name.substring(0,name.length-1).toLowerCase + name(name.length-1).toString().toUpperCase()
+            val modifiedName = name(0).toString().toUpperCase() + name.substring(1,name.length-1).toLowerCase + name(name.length-1).toString().toUpperCase()
             formattedNames(modifiedName)(identity) 
         case _ => name
     }
