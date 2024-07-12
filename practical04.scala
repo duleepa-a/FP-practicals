@@ -1,4 +1,5 @@
 import scala.io.StdIn._
+
 object practical04{
     var nameArray = Array("Pen","Pencil","Bottle")
     var intArray = Array(10,20,30)
@@ -30,8 +31,8 @@ object practical04{
         }
     }
 
-    def checkNum(num : Int) : Unit = num  match {
-        case  x if x <= 0 => println("Negative/Zero")
+    def checkNum(num : Int) : Unit = num match {
+        case x if x <= 0 => println("Negative/Zero")
         case x if x%2 == 1 => println("Odd Number is given")
         case _ => println("Even Number is given")
     }
@@ -57,7 +58,23 @@ object practical04{
             }     
         }
     }
-    
+
+    def formattedNames(name: String)(format: String => String): String = {
+        format(name)
+    } 
+
+    def formatNames(name: String) : String = name match {
+        case s if s == "Benny"  => formattedNames(name)(toUpper)
+        case s if s == "Niroshan" =>  
+            val modifiedName = name.substring(0,2).toUpperCase + name.substring(2).toLowerCase
+            formattedNames(modifiedName)(identity)
+        case s if s == "Saman" => formattedNames(name)(toLower)
+        case s if s == "Kumara" => 
+            val modifiedName = name.substring(0,name.length-1).toLowerCase + name(name.length-1).toString().toUpperCase()
+            formattedNames(modifiedName)(identity) 
+        case _ => name
+    }
+
     def main(args: Array[String]): Unit = {
         
         //Question 1 .1)
@@ -83,5 +100,13 @@ object practical04{
         printf("\n\nQuestion 03 :\n")
         println(toLower("HeEllo"))
         println(toUpper("HeEllo"))
+
+        println(formatNames("Benny"))
+        println(formatNames("Niroshan"))
+        println(formatNames("Saman"))
+        println(formatNames("Kumara"))
+        println(formatNames("Duleepa"))
+
+
     }
 }
