@@ -1,27 +1,23 @@
 object practical09Q03{
 
-   def toUpper(s: String) : String = {
-         s.map { c =>
+   val toUpper : String => String = s => s.map { c =>
             if (c >= 'a' && c <= 'z'){ 
                 (c - 32).toChar 
             }
             else{
                  c
             }     
-        }
     }
 
-    def toLower(s: String) : String = {
-        s.map { c =>
+    val toLower : String => String = s => s.map  { c =>
             if (c >= 'A' && c <= 'Z'){ 
                 (c + 32).toChar 
             }
             else{
                  c
             }     
-        }
     }
-
+    
     def formattedNames(name: String)(formatFunc: String => String): String = formatFunc(name)
 
     def formatNames(name: String) : String = name match {
